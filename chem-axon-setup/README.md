@@ -18,8 +18,9 @@ Registration Database to S3 in a scheduled way.<br/>
 - Fill the details in configs/deploy_config.env
 - Start the deployment by running :
   ```bash
-  cd chem-axon-setup
-  sh deploy.sh <env> # env is the same variable used in deploy_config.env in lower case.
+  # env is the same variable used in configs/deploy_config.env in lower case.
+  # aws_profile is the profile to be used. If no profile is manually set, provide default.
+  sh DeployChemAxonCompRegEnv.sh <env> <aws_profile> 
   ```
 
 ### What will be setup?
