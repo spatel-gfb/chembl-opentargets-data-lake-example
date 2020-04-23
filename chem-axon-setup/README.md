@@ -21,3 +21,6 @@ Registration Database to S3 in a scheduled way.<br/>
   cd chem-axon-setup
   sh deploy.sh <env> # env is the same variable used in deploy_config.env in lower case.
   ```
+
+### What will be setup?
+
