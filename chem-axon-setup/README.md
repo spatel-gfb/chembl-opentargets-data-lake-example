@@ -20,7 +20,11 @@ Registration Database to S3 in a scheduled way.<br/>
   ```bash
   # env is the same variable used in configs/deploy_config.env in lower case.
   # aws_profile is the profile to be used. If no profile is manually set, provide default.
+<<<<<<< HEAD
   sh DeployChemAxonCompRegEnv.sh <env> <aws_profile>
+=======
+  sh DeployChemAxonCompRegEnv.sh <env> <aws_profile> 
+>>>>>>> 891781a438bbfe3dab9a9d69248d092d1df23f56
   ```
 
 ### What will be setup?
@@ -37,10 +41,17 @@ As soon as the deploy.sh is executed, it will gather the variables from configs/
 
 - AWS Secret Manager : A secret with Comp Reg RDS Credentials is created. This secret key is then used in the ETL.
 
+<<<<<<< HEAD
 - AWS S3 Bucket and Lambda : A s3 bucket is created which will be used for data loading. Along with it a Lambda Function which will be used to trigger the ETL is also created. This lambda function details could be found from chem-axon-setup/lambdas/trigger_compound_reg_pipeline.py
 
   Currently it is using S3 event trigger but that can be changed to any other trigger of choice as well.
 
+=======
+- AWS S3 Bucket and Lambda : A s3 bucket is created which will be used for data loading. Along with it a Lambda Function which will be used to trigger the ETL is also created. This lambda function details could be found from chem-axon-setup/lambdas/trigger_compound_reg_pipeline.py 
+
+  Currently it is using S3 event trigger but that can be changed to any other trigger of choice as well.
+  
+>>>>>>> 891781a438bbfe3dab9a9d69248d092d1df23f56
 - AWS Glue : A glue database and table on top of the S3 bucket data is created for querying through Athena.
 
 
@@ -54,4 +65,8 @@ The script chem-axon-setup/compound_reg_pipeline/comp_reg_data_load.py when trig
 - Loads this new DF into a new S3 partition with date in parquet format.
   (The partition can be user specific and depends on the frequency of execution.)
 - If no new data is detected, it will just exit.
+<<<<<<< HEAD
 - The logs are available in cloudwatch and can be found in AWS Batch -> Jobs dashboard -> Specific Job ID Details.
+=======
+- The logs are available in cloudwatch and can be found in AWS Batch -> Jobs dashboard -> Specific Job ID Details.
+>>>>>>> 891781a438bbfe3dab9a9d69248d092d1df23f56
