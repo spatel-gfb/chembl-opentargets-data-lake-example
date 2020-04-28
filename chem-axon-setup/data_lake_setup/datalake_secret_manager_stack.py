@@ -3,6 +3,17 @@ from aws_cdk import (
     aws_secretsmanager as sm
 )
 
+""" This module uses below parameters from config_dict passed to it :
+config_dict = {
+	'comp_reg_secret_name': 'CompRegConn',
+	'comp_reg_host_name': 'db_endpoint_host_name',
+	'comp_reg_port': 'db_port',
+	'comp_reg_db_name': 'db_name',
+	'comp_reg_user_name': 'db_user',
+	'comp_reg_password': 'db_pass'
+}
+"""
+
 class DatalakeSecretManagerStack(core.Stack):
 
     def __init__(self, scope: core.Construct, id: str, config_dict, **kwargs) -> None:

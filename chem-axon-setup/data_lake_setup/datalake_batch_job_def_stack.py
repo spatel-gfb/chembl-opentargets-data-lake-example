@@ -5,6 +5,15 @@ from aws_cdk import (
     aws_ecr as ecr
 )
 
+""" This module uses below parameters from config_dict passed to it :
+config_dict = {
+	'workflow_ecr_repo': 'datalake-repo',
+	'datalake_bucket_name': 'datalake-prod',
+	'workflow_comp_reg_image_version': 'comp-reg-1.0',
+	'comp_reg_secret_name': 'CompRegConn'
+}
+
+"""
 class DatalakeBatchJobStack(core.Stack):
 
     def __init__(self, scope: core.Construct, id: str, config_dict, **kwargs) -> None:

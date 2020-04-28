@@ -28,6 +28,25 @@ config_dict['comp_reg_db_name'] = os.environ.get("CompRegDBName")
 config_dict['comp_reg_user_name'] = os.environ.get("CompRegUserName")
 config_dict['comp_reg_password'] = os.environ.get("CompRegPassword")
 
+""" Sample config_dict would look like below :
+config_dict = {
+	'env_var': 'prod',
+	'vpc_id': 'vpc-01234567',
+	'SubnetIds': 'subnet-01234567,subnet-0123456789',
+	'AvailabilityZones': 'us-east-1a,us-east-1b',
+	'workflow_ecr_repo': 'datalake-repo',
+	'datalake_bucket_name': 'datalake-prod',
+	'datalake_db_name': 'datalake_db',
+	'workflow_comp_reg_image_version': 'comp-reg-1.0',
+	'comp_reg_secret_name': 'CompRegConn',
+	'comp_reg_host_name': 'db_endpoint_host_name',
+	'comp_reg_port': 'db_port',
+	'comp_reg_db_name': 'db_name',
+	'comp_reg_user_name': 'db_user',
+	'comp_reg_password': 'db_pass'
+}
+"""
+
 """ Start execution of deployment """
 app = core.App()
 DatalakeBatchStack(app, "datalake-batch-stack", config_dict, env=env_cn)

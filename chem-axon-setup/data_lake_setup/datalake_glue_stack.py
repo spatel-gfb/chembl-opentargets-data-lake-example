@@ -4,6 +4,12 @@ from aws_cdk import (
     aws_glue as glue
 )
 
+""" This module uses below parameters from config_dict passed to it :
+config_dict = {
+	'datalake_bucket_name': 'datalake-prod',
+	'datalake_db_name': 'datalake_db'
+}
+"""
 class DatalakeGlueStack(core.Stack):
 
     def __init__(self, scope: core.Construct, id: str, config_dict, **kwargs) -> None:

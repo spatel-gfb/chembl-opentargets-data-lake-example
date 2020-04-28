@@ -8,6 +8,15 @@ from aws_cdk import (
     aws_s3_notifications
 )
 
+""" This module uses below parameters from config_dict passed to it :
+config_dict = {
+	'vpc_id': 'vpc-01234567',
+	'SubnetIds': 'subnet-01234567,subnet-0123456789',
+	'AvailabilityZones': 'us-east-1a,us-east-1b',
+	'datalake_bucket_name': 'datalake-prod'
+}
+"""
+
 class DatalakeLambdaStack(core.Stack):
 
     def __init__(self, scope: core.Construct, id: str, config_dict, **kwargs) -> None:
